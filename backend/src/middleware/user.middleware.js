@@ -36,7 +36,7 @@ export const authenticateUser = (req, res, next) => {
     if (req.body.userId && req.body.userId !== userId) {
       throw "Invalid user ID";
     } else {
-      req.userId = userId;
+      req.body.userId = userId;
       next();
     }
   } catch (err) {
